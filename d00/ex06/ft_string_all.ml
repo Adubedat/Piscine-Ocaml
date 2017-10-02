@@ -6,14 +6,14 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/02 17:21:49 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/02 18:19:19 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/02 18:32:44 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 let is_digit c =
     c >= '0' && c <= '9'
 
-let ft_string_all (check: char -> bool) str =
+let ft_string_all (is_digit: char -> bool) str =
     let len = String.length str in
     let rec loop str n =
         if n = len then
