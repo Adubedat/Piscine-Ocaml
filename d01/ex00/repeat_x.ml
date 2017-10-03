@@ -11,9 +11,9 @@
 (* ************************************************************************** *)
 
 let repeat_x n =
-    if n < 0 then "Error"
     let rec x_loop str n =
-        if n > 0 then
+    	if n < 0 then "Error"
+        else if n > 0 then
             x_loop (str ^ "x") (n -1)
         else
             str
@@ -21,6 +21,8 @@ let repeat_x n =
     x_loop "" n
 
 let () =
-    print_endline (repeat_x 5);
+    print_endline (repeat_x (-1));
     print_endline (repeat_x 0);
-    print_endline (repeat_x (-3))
+    print_endline (repeat_x 1);
+    print_endline (repeat_x 2);
+    print_endline (repeat_x 5)
