@@ -25,6 +25,11 @@ let ft_is_palindrome str =
     loop str 0 (len - 1)
 
 let main () =
+    print_endline (string_of_bool(ft_is_palindrome "974"));
+    print_endline (string_of_bool(ft_is_palindrome "65456"));
+    print_endline (string_of_bool(ft_is_palindrome "a"));
+    print_endline (string_of_bool(ft_is_palindrome "aa"));
+    print_endline (string_of_bool(ft_is_palindrome "aaa"));
     print_endline (string_of_bool(ft_is_palindrome "radar"));
     print_endline (string_of_bool(ft_is_palindrome "madam"));
     print_endline (string_of_bool(ft_is_palindrome "car"));

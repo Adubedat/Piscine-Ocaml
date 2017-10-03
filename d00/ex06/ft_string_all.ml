@@ -16,7 +16,8 @@ let is_digit c =
 let ft_string_all (is_digit: char -> bool) str =
     let len = String.length str in
     let rec loop str n =
-        if n = len then
+	if len = 0 then false
+        else if n = len then
             true
         else if is_digit (String.get str n) then
             loop str (n + 1)
@@ -26,6 +27,7 @@ let ft_string_all (is_digit: char -> bool) str =
     loop str 0
 
 let main () =
+    print_endline (string_of_bool(ft_string_all is_digit ""));
     print_endline (string_of_bool(ft_string_all is_digit "0123456789"));
     print_endline (string_of_bool(ft_string_all is_digit "0123456789B"));
     print_endline (string_of_bool(ft_string_all is_digit "A0123456789"));

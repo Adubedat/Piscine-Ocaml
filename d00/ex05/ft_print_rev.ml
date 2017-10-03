@@ -24,6 +24,7 @@ let ft_print_rev str =
 
 let main () =
     ft_print_rev "Hello world !";
+    ft_print_rev "H";
     ft_print_rev "";
     ft_print_rev "Cake is a lie"
 
