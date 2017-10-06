@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/06 11:57:27 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/06 13:51:25 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/06 13:56:27 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -46,7 +46,7 @@ let draw_node value x y =
 
 let draw_tree_node (tree: 'a tree) =
     match tree with
-        | Nil -> draw_nil 400 300
+        | Nil -> draw_nil 100 500
         | Node (value, nil1, nil2) -> draw_node value 400 400
 
 let () =
@@ -54,6 +54,8 @@ let () =
     draw_square 100 100 5;
     draw_square 700 100 (-1);
     draw_square 700 500 60;
+    let nil = Nil in
     let node = Node ("lol", Nil, Nil) in
+    draw_tree_node nil;
     draw_tree_node node;
     ignore(Graphics.read_key ())
