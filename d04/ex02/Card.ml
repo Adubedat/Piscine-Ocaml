@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/07 11:05:22 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/07 13:30:10 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/07 21:46:10 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -152,7 +152,7 @@ let allClubs =
     loop Value.all
 
 let all =
-    allSpades @ allHearts @ allDiamonds @ allClubs
+    List.concat [allSpades; allHearts; allDiamonds; allClubs]
 
 let getValue (card:t) =
     let (value,color) = card in value
@@ -162,14 +162,16 @@ let getColor (card:t) =
 
 let toString (card:t) = 
     let (value,color) = card in
-    (Value.toString value) ^ (Color.toString color);;
+    Printf.sprintf ("%s%s") (Value.toString value) (Color.toString color)
 
 let toStringVerbose (card:t) = 
     let (value,color) = card in
-    "Card(" ^ (Value.toStringVerbose value) ^ ", " ^ (Color.toStringVerbose color) ^ ")";;
+    Printf.sprintf ("Card(%s, %s)") (Value.toStringVerbose value) (Color.toStringVerbose color)
 
 let compare ((value1, color1):t) ((value2, color2):t) =
-    (Value.toInt value1) - (Value.toInt value2)
+    if (Value.toInt value1) > (Value.toInt value2) then 1
+    else if (Value.toInt value1) = (Value.toInt value2) then 0
+    else (-1)
 
 let max ((value1, color1): t) ((value2, color2): t) =
     if (Value.toInt value1 >= Value.toInt value2) then ((value1, color1):t) else ((value2, color2):t)
