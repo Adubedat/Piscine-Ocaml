@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/07 11:05:22 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/07 22:59:44 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/07 23:29:17 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -222,16 +222,17 @@ let newDeck =
 let toStringList (deck: t) =
     let rec loop lst deck =
         match deck with
-            | head :: tail -> loop ((Card.toString head) :: lst) tail
+            | head :: tail -> loop (List.append lst [(Card.toString head)]) tail
             | [] -> lst
     in loop [] deck
 
 let toStringListVerbose (deck: t) =
     let rec loop lst deck =
         match deck with
-            | head :: tail -> loop ((Card.toStringVerbose head) :: lst) tail
+            | head :: tail -> loop (List.append lst [(Card.toStringVerbose head)]) tail
             | [] -> lst
     in loop [] deck
  
 let drawCard (deck: t) =
-    ((List.hd deck), (List.tl deck))
+    if List.length deck = 0 then raise (Failure "empty deck") else
+    (List.hd deck, List.tl deck)

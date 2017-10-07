@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/06 18:38:05 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/06 18:51:56 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/06 18:55:01 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -42,7 +42,7 @@ let () =
     print_list_verbose Value.all;
     print_endline "\nto int : \n";
     print_list_toint Value.all;
- (*   print_endline "\nnext : \n";
+   (* print_endline "\nnext : \n";
     print_list_next Value.all;
     print_endline "\nprevious : \n";
     print_list_previous Value.all*)
