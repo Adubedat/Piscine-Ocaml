@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/10 14:54:48 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/10 15:45:16 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/10 15:51:06 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -20,9 +20,9 @@ module StringHash =
             begin
                 let rec loop c hash count =
                     if count = (len - 1) then hash
-                    else loop (String.get str (count + 1)) ((int_of_char c) + 31 * hash) (count + 1)
+                    else loop (String.get str (count + 1)) (hash * 33 + (int_of_char c)) (count + 1)
                 in
-                loop (String.get str 0) 7 0
+                loop (String.get str 0) 5381 0
             end
     end
 
