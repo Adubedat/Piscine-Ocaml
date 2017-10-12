@@ -14,4 +14,4 @@ let () =
     print_float (eu_dist [|0.0; 1.5|] [|4.5; 3.61|]); print_char '\n';
     print_float (eu_dist [|0.0; 0.0|] [|1.0; 0.0|]); print_char '\n';
     print_float (eu_dist [|0.0; 1.5|] [|1.5; 0.0|]); print_char '\n';
-    print_float (eu_dist [|3.0; 3.0|] [|3.0; 2.0|]); print_char '\n'
+    print_float (eu_dist [|1.1; 2.2|] [|3.3; 4.4|]); print_char '\n'

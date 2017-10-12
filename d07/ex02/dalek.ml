@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/12 18:06:14 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/12 21:58:04 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/12 22:23:39 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -17,9 +17,9 @@ object
         Random.self_init ();
         let a = int_of_char 'a' in
         let amaj = int_of_char 'A' in
+        let rec loop str nb =
         let letter_string = String.make 1 (char_of_int (a + (Random.int 26))) in
         let lettermaj_string = String.make 1 (char_of_int (amaj + (Random.int 26))) in
-        let rec loop str nb =
             match nb with 
                 | 3 -> str
                 | 0 -> loop (str ^ lettermaj_string) (nb + 1)
