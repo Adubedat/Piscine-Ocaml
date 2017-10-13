@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/13 15:47:01 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/13 15:55:21 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/13 15:58:21 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -22,6 +22,7 @@ let () =
     let mercury = new Atom.mercury in
     let uranium = new Atom.uranium in
     let plutonium = new Atom.plutonium in
+    let lithium = new Atom.lithium in
     print_endline hydrogen#to_string;
     print_endline "\n----------------------\n";
     print_endline carbon#to_string;
@@ -44,4 +45,6 @@ let () =
     print_endline "\n----------------------\n";
     print_endline (string_of_bool(hydrogen#equals carbon));
     print_endline "\n----------------------\n";
-    print_endline (string_of_bool(hydrogen#equals hydrogen2))
+    print_endline (string_of_bool(hydrogen#equals hydrogen2));
+    print_endline "\n----------------------\n";
+    print_endline lithium#to_string

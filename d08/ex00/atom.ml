@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/13 15:14:40 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/13 15:55:44 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/13 15:57:41 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -69,4 +69,9 @@ end
 class plutonium =
 object
     inherit atom "Plutonium" "Pu" 94
+end
+
+class lithium =
+object
+    inherit atom "Lithium" "Li" 3
 end
