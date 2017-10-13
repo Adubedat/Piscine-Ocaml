@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/13 16:28:18 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/13 18:35:21 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/13 20:02:32 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -16,8 +16,14 @@ object (self)
     method name = name
     method formula = 
         let carbon_list = List.filter (fun x -> x#symbol = "C") lst in
-        let hydrogen_list = List.filter (fun x -> x#symbol = "H") lst in
-        let other_list = List.filter (fun x -> x#symbol <> "C" && x#symbol <> "H") lst in
+        let hydrogen_list = match (List.length carbon_list) with
+            | 0 -> []
+            | _ -> List.filter (fun x -> x#symbol = "H") lst
+        in
+        let other_list = match (List.length carbon_list) with
+            | 0 -> List.filter (fun x -> x#symbol <> "C") lst
+            | _ -> List.filter (fun x -> x#symbol <> "C" && x#symbol <> "H") lst
+        in
         let sorted_lst = List.sort (fun x y -> compare x#symbol y#symbol) other_list in
         let rec loop (str:string) (lst:Atom.atom list) count =
             match lst with
