@@ -6,7 +6,7 @@
 (*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2017/10/13 18:41:42 by adubedat          #+#    #+#             *)
-(*   Updated: 2017/10/13 18:55:22 by adubedat         ###   ########.fr       *)
+(*   Updated: 2017/10/13 19:44:18 by adubedat         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -28,7 +28,8 @@ object (self)
         | 12 -> "Dodecane"
         | _ -> ""
 
-    method formula = "C" ^ (string_of_int n) ^ "H" ^ (string_of_int (2 + 2 * n))
+    method formula = if n = 1 then "CH" ^ (string_of_int (2 + 2 * n))
+                              else "C" ^ (string_of_int n) ^ "H" ^ (string_of_int (2 + 2 * n))
 
     method to_string = "name : " ^ self#name ^ "\nformula : " ^ self#formula
 
